@@ -2,7 +2,9 @@
 
 ## Descripción
 
-Aplicación web desarrollada con **Ionic + React** que consume la API pública de Rick and Morty para mostrar información de sus personajes en tarjetas.
+Aplicación web desarrollada con **Ionic + React** que consume la API pública de Rick and Morty para obtener y visualizar información de los personajes de la serie.
+
+Los datos se muestran dinámicamente mediante tarjetas de Ionic, incluyendo información relevante de cada personaje.
 
 API utilizada:
 
@@ -10,19 +12,22 @@ API utilizada:
 
 ## Proceso realizado
 
-Se tomó como base el trabajo realizado en el Taller 4 de Ionic + React + APIs.
+La aplicación fue desarrollada tomando como referencia lo trabajado previamente en el Taller 4 sobre consumo de APIs con Ionic + React.
 
-1. Se creó una interfaz `Character` con la estructura de los datos entregados por la API.
-2. Se utilizaron estados de React mediante `useState` para almacenar personajes, estado de carga, errores y enlaces de paginación.
-3. Se realizó la petición HTTP con `fetch()`.
-4. La respuesta JSON se procesa utilizando `datos.results`, donde vienen los personajes.
-5. Los personajes se muestran dinámicamente utilizando `map()` y componentes `IonCard` de Ionic.
-6. Se agregó un indicador de carga mediante `IonSpinner` y manejo de errores.
-7. Se utilizaron los campos `info.next` e `info.prev` de la API para navegar entre las páginas y poder consultar todos los personajes.
+Para su implementación se realizaron las siguientes etapas:
+
+1. Se definió una interfaz `Character` para representar la estructura de los datos recibidos desde la API.
+2. Se utilizaron estados de React mediante `useState` para almacenar los personajes, controlar el estado de carga, manejar errores y gestionar la paginación.
+3. Se realizó la solicitud HTTP a la API utilizando `fetch()`.
+4. La respuesta obtenida se procesa desde `datos.results`, donde se encuentra la información de los personajes.
+5. Los personajes se muestran dinámicamente mediante `map()` utilizando componentes `IonCard` de Ionic.
+6. Se incorporó un indicador de carga mediante `IonSpinner`.
+7. Se implementó manejo de errores en caso de que la solicitud a la API no pueda completarse.
+8. Se utilizaron los campos `info.next` e `info.prev` entregados por la API para navegar entre las distintas páginas de resultados.
 
 ## Información mostrada
 
-Para cada personaje se presenta:
+Para cada personaje se presenta la siguiente información:
 
 - Imagen
 - ID
@@ -35,46 +40,9 @@ Para cada personaje se presenta:
 - Ubicación actual
 - Cantidad de episodios en los que aparece
 
-## Ejecución
+## Ejecución del proyecto
 
-Una vez dentro del proyecto Ionic:
+Para ejecutar la aplicación localmente, primero se debe ingresar a la carpeta del proyecto e instalar las dependencias:
 
 ```bash
 npm install
-ionic serve
-```
-
-Luego, en la aplicación, se debe presionar el botón **Cargar personajes**.
-
-## Archivos principales
-
-```text
-src/
-└── pages/
-    ├── PostsPage.tsx
-    └── PostsPage.css
-```
-
-## Capturas de pantalla
-
-Antes de entregar el repositorio, guardar dos capturas dentro de una carpeta llamada `capturas` usando exactamente estos nombres:
-
-```text
-capturas/
-├── vista-principal.png
-└── personajes.png
-```
-
-Después de agregarlas, estas imágenes se mostrarán automáticamente en el README:
-
-### Vista principal
-
-![Vista principal](./capturas/vista-principal.png)
-
-### Personajes cargados
-
-![Personajes cargados](./capturas/personajes.png)
-
-## Resultado
-
-La aplicación permite consultar los personajes de Rick and Morty desde una API REST, visualizar sus datos de forma dinámica y desplazarse entre las distintas páginas de resultados.
